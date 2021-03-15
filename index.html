@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS link -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+
+    <title>Cards from Design Daily</title>
+    <!--link : https://www.uidesigndaily.com/posts/sketch-chatbox-chat-dark-theme-day-1251-->
+</head>
+
+<body>
+    <div class="container">
+        <div class="chatbox">
+            <!-- Title -->
+            <div class="chatbox-title">
+                <div class="chatbox-title-image">
+                    <img class="image1" src="images/image1.jpg" onclick="imgSlider1('images/image1.jpg')">
+                    <img class="image2" src="images/image2.jpg" onclick="imgSlider2('images/image2.jpg')">
+                    <img class="image3" src="images/image3.jpg" onclick="imgSlider3('images/image3.jpg')">
+                </div>
+                <div class="chatbox-title-text">
+                    <h3>Elnora, Leila, Lucinda</h3>
+                    <p>We tipically reply in a few minutes.</p>
+                </div>
+            </div>
+            <!-- Content -->
+            <div class="chatbox-content">
+                <div class="chatbox-content-image">
+                    <img class="image1 chatImage" src="images/image1.jpg">
+                </div>
+                <div class="chatbox-content-text" id="textElnora">
+                    <p>Hi there! <br>Looking to get started? I can help answer to your questions!</p>
+                </div>
+
+                <div class="chatbox-content-text hide" id="textLeila">
+                    <p>Hi there! <br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Leila!</p>
+                </div>
+
+                <div class="chatbox-content-text hide" id="textLucinda">
+                    <p>Hi there! <br>Lorem ipsum dolor sit amet consectetur. Lucinda!</p>
+                </div>
+            </div>
+            <!-- Footer -->
+            <div class="chatbox-content-footer">
+                <p>By using the chat, I confirm that I have read the <a href="#">privacy policy</a> and do not object to
+                    the use of my personal data.</p>
+                <button>I agree</button>
+            </div>
+
+            <div class="close" onclick="closeChatbox()">
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript -->
+    <script type="text/javascript">
+        const textElnora = document.querySelector('#textElnora');
+        const textLeila = document.querySelector('#textLeila');
+        const textLucinda = document.querySelector('#textLucinda');
+        const close = document.querySelector('.close');
+        const chatbox = document.querySelector('.chatbox');
+        const chatboxContent = document.querySelector('.chatbox-content');
+
+        function imgSlider1(anything) {
+            document.querySelector('.chatImage').src = anything;
+            textElnora.style.display = "block";
+            textLeila.style.display = "none";
+            textLucinda.style.display = "none";
+        }
+
+        function imgSlider2(anything) {
+            document.querySelector('.chatImage').src = anything;
+            textElnora.style.display = "none";
+            textLeila.style.display = "block";
+            textLucinda.style.display = "none";
+        }
+
+        function imgSlider3(anything) {
+            document.querySelector('.chatImage').src = anything;
+            textElnora.style.display = "none";
+            textLeila.style.display = "none";
+            textLucinda.style.display = "block";
+        }
+
+        function closeChatbox() {
+            close.classList.toggle('active');
+            chatboxContent.classList.toggle('hide');
+            chatbox.classList.toggle('hideShowChatbox')
+        }
+    </script>
+
+</body>
+
+</html>

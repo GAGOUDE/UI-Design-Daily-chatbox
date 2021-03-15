@@ -1,0 +1,252 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+}
+
+.container{
+    background: #2F2D3F;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 800px;
+}
+
+.chatbox{
+    width: 450px;
+    height: 600px;
+    background: #282639;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.432);
+}
+
+/* Chatbox title*/
+.chatbox-title{
+    width: 100%;
+    height: 70px;
+    background: #FF6969;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.chatbox-title-image .image1 {
+    position: relative;
+    z-index: 1;
+}
+
+.chatbox-title-image .image2{
+    position: relative;
+    right: 17px;
+    z-index: 0;
+}
+
+.chatbox-title-image .image3 {
+    position: relative;
+    right: 32px;
+}
+
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid white;
+    cursor: pointer;
+}
+
+/* Chatbox content */
+
+.chatbox-content{
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.chatbox-content-text{
+    width: 300px;
+    height: 120px;
+    background: #3A384C;
+    margin-left: 20px;
+    border-radius: 8px;
+    color: white;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.chatbox-content-text::before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background: #3A384C;
+    right: 290px;
+    transform: rotate(45deg);
+    z-index: 0;
+}
+
+/* Chatbox content footer */
+.chatbox-content-footer{
+    position: relative;
+    background: #3A384C;
+    width: 100%;
+    height: 180px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 25px;
+    text-align: center;
+}
+
+.chatbox-content-footer p{
+    color: white;
+    margin: 0 auto;
+}
+
+.chatbox-content-footer a {
+    color: #F76B6C;
+}
+
+button{
+    display: block;
+    margin-left: 10px;
+    margin-top: 15px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #F76B6C;
+    background: none;
+    border: 1px solid #F76B6C;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover{
+    background: #F76B6C;
+    color: white;
+}
+
+/* Close */
+.close {
+    background: #F76B6C;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: right;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.line{
+    width: 22px;
+    height: 2px;
+    background-color: white;
+    position: relative;
+    top: 25px;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.line::before{
+    content: "";
+    width: 22px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    transform: rotate(87deg);
+}
+
+.line::after{
+    content: "";
+    width: 22px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    transform: rotate(0);
+    display: none;
+}
+
+.close.active .line{
+    transform: rotate(0);
+}
+
+.close.active .line::before {
+    transform: rotate(0);
+    top: 6px;
+}
+
+.close.active .line::after {
+    transform: rotate(0);
+    top: -6px;
+    display: block;
+}
+
+.close.active .chatbox-content{
+    display: none;
+}
+
+.hide{
+    display: none;
+}
+
+.hideShowChatbox{
+    height: 250px;
+    transition: 0.5s ease;
+}
+
+/* RESPONSIVE */
+@media (max-width: 510px){
+    .container {
+        height: 950px;
+    }
+    .chatbox{
+        width: 315px;
+    }
+    .chatbox-title{
+        flex-direction: column;
+        height: 160px;
+    }
+
+    .chatbox-content{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-top: 0;
+        height: 260px;
+    }
+
+    .chatbox-content-text{
+        margin: 10px auto;
+        width: 275px;
+    }
+
+    .chatbox-content-text::before{
+        bottom: 112px;
+        right: 130px;
+    }
+
+    .chatbox-content-footer{
+        padding: 10px;
+    }
+
+    button{
+        margin: 20px auto;
+    }
+
+    .hideShowChatbox {
+        height: 410px;
+    }
+}

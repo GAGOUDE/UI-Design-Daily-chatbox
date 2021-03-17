@@ -8,10 +8,10 @@ body {
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     line-height: 1.5;
+    background: #2F2D3F;
 }
 
 .container{
-    background: #2F2D3F;
     display: grid;
     place-items: center;
     width: 100%;
@@ -205,6 +205,21 @@ button:hover{
 .hideShowChatbox{
     height: 250px;
     transition: 0.5s ease;
+}
+
+/* Footer */
+footer {
+    margin: 30px auto;
+}
+
+.attribution {
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+}
+
+.attribution a {
+    color: #F76B6C;
 }
 
 /* RESPONSIVE */
